@@ -1,0 +1,159 @@
+% =====================================================================
+%  Computational Details -- Supporting Information section
+%  "Surface Oxidation State Controls Product Selectivity in Autothermal
+%   Reforming of Ammonia over Ru Catalysts"
+%
+%  USAGE (Overleaf): put  \input{computational_details}  where this section
+%  should appear (e.g. in the Supporting Information). Requires amsmath +
+%  amssymb, which are already loaded in ATR NH3.tex.
+%
+%  OPTIONAL SI equation numbering (S11, S12, ...): add these two lines to
+%  your PREAMBLE, before \begin{document}:
+%     \renewcommand{\theequation}{S\arabic{equation}}
+%     \setcounter{equation}{10}
+%
+%  NOTE (revtex twocolumn): the three wide displays (Svib, dOmega/A, log10)
+%  can overflow a single column; wrap them in \begin{widetext}...\end{widetext}
+%  or compile the SI in onecolumn if they run over.
+% =====================================================================
+
+\section*{Computational Details}
+
+\subsection*{Electronic-structure calculations}
+Spin-polarized density functional theory (DFT) calculations were performed with
+the Perdew--Burke--Ernzerhof (PBE) exchange--correlation functional in the Vienna
+\textit{Ab initio} Simulation Package (VASP), using the projector augmented-wave
+method and a 430~eV plane-wave cutoff, as detailed in Section~2 of the main text.
+The RuO$_2$(110) surfaces were modeled as $(2\times2)$ three-trilayer slabs and
+the Ru(0001) surface as a $(4\times4)$ slab, each separated from its periodic
+images by a vacuum gap.
+
+\subsection*{Free-energy corrections}
+The Gibbs free energy of every slab configuration used in the thermodynamic
+analysis is evaluated from its DFT total energy $E_{\mathrm{DFT}}$ together with
+the zero-point energy and vibrational (entropic) corrections obtained from the
+harmonic vibrational frequencies $\nu_i$:
+\begin{equation}
+  G_{\mathrm{slab}}(T) = E_{\mathrm{DFT}} + E_{\mathrm{ZPE}}
+  - T\,S_{\mathrm{vib}}(T)
+  \label{eq:Gslab}
+\end{equation}
+\begin{equation}
+  E_{\mathrm{ZPE}} = \tfrac{1}{2}\sum_i h\nu_i
+  \label{eq:ZPE}
+\end{equation}
+\begin{equation}
+  S_{\mathrm{vib}}(T) = k_{\mathrm B}\sum_i\left[
+    \frac{h\nu_i/k_{\mathrm B}T}{e^{\,h\nu_i/k_{\mathrm B}T}-1}
+    - \ln\!\left(1-e^{-h\nu_i/k_{\mathrm B}T}\right)\right]
+  \label{eq:Svib}
+\end{equation}
+where $k_{\mathrm B}$ and $h$ are the Boltzmann and Planck constants. Because the
+zero-point and vibrational-entropy terms are folded directly into
+$G_{\mathrm{slab}}(T)$, the tabulated slab free energies are temperature
+dependent (e.g., \textit{o}-RuO$_2$(110) 0v: $-817.70$~eV at $0$~K
+$\rightarrow -837.48$~eV at $1200$~K), and no additional entropy term is applied
+in the grand-potential expressions below. Vibrational frequencies of gas-phase
+species were taken from the NIST Computational Chemistry Comparison and Benchmark
+Database.
+
+\subsection*{Oxygen reservoir chemical potential}
+The surface exchanges lattice oxygen with a gas-phase O$_2$ reservoir. At
+temperature $T$ and pressure $p$ the reservoir chemical potential varies with
+pressure as
+\begin{equation}
+  \mu_{\mathrm{O_2}}(T,p) = \mu_{\mathrm{O_2}}(T,p^{0})
+  + k_{\mathrm B}T\ln\!\left(p/p^{0}\right)
+  \label{eq:muO2}
+\end{equation}
+and the oxygen chemical potential is one-half of it, referenced to the $0$~K DFT
+O$_2$ energy:
+\begin{equation}
+  \mu_{\mathrm O}(T,p) = \tfrac{1}{2}\mu_{\mathrm{O_2}}(T,p)
+  = \tfrac{1}{2}G_{\mathrm{O_2}}(0\,\mathrm{K}) + \Delta\mu_{\mathrm O}
+  \label{eq:muO}
+\end{equation}
+\begin{equation}
+  \Delta\mu_{\mathrm O} =
+  \tfrac{1}{2}\left[G_{\mathrm{O_2}}(T) - G_{\mathrm{O_2}}(0\,\mathrm{K})\right]
+  + \tfrac{1}{2}k_{\mathrm B}T\ln\!\left(p_{\mathrm{O_2}}/p^{0}\right)
+  \label{eq:dmuO}
+\end{equation}
+so that $\Delta\mu_{\mathrm O}=0$ corresponds to gas-phase O$_2$ at $0$~K and more
+negative $\Delta\mu_{\mathrm O}$ denotes more reducing conditions. Replacing the
+thermal term $\tfrac{1}{2}[G_{\mathrm{O_2}}(T)-G_{\mathrm{O_2}}(0\,\mathrm{K})]$
+with experimental JANAF values shifts every threshold by $\le 0.05$~eV per O atom
+and leaves the stability ordering unchanged.
+
+\subsection*{Surface grand potential}
+The grand potential of a slab open to the oxygen reservoir is
+\begin{equation}
+  \Omega = U - T\,S(T) - \sum_i \mu_i N_i
+  \label{eq:Omega_gen}
+\end{equation}
+Using the slab free energy of Eq.~\eqref{eq:Gslab} for the $U-TS$ term and noting
+that only oxygen is exchanged with the reservoir while ruthenium is conserved,
+this becomes
+\begin{equation}
+  \Omega = G_{\mathrm{slab}}(T) - \mu_{\mathrm O} N_{\mathrm O}
+  - \mu_{\mathrm{Ru}} N_{\mathrm{Ru}}
+  \label{eq:Omega_surf}
+\end{equation}
+where $N_{\mathrm O}$ and $N_{\mathrm{Ru}}$ are the numbers of O and Ru atoms in
+the cell. Because every termination contains the same $N_{\mathrm{Ru}}=36$, the
+$\mu_{\mathrm{Ru}}N_{\mathrm{Ru}}$ term is identical across surfaces and cancels
+when grand potentials are compared.
+
+\subsection*{Relative (referenced) grand potential}
+Terminations are compared through the grand potential of each $k$-vacancy surface
+relative to a vacancy-free reference, per unit surface area $A$
+($=119.70~\text{\AA}^{2}$ for the $(2\times2)$ cell):
+\begin{equation}
+  \frac{\Delta\Omega_k}{A} =
+  \frac{\left[G_{\mathrm{slab}}^{(k)}(T)
+  - G_{\mathrm{slab}}^{(\mathrm{ref})}(T)\right]
+  + n_{\mathrm{vac}}\left(\tfrac{1}{2}G_{\mathrm{O_2}}(0\,\mathrm{K})
+  + \Delta\mu_{\mathrm O}\right)}{A}
+  \label{eq:dOmega}
+\end{equation}
+where $n_{\mathrm{vac}} = N_{\mathrm O}^{(\mathrm{ref})} - N_{\mathrm O}^{(k)}$ is
+the number of oxygen atoms removed relative to the reference, so the slope of each
+line, $n_{\mathrm{vac}}/A$, is the areal density of released oxygen. The
+referencing subtracts a common term ($\mu_{\mathrm{Ru}}N_{\mathrm{Ru}}$ and the
+bulk contribution), making $\Delta\Omega$ independent of the ruthenium reference.
+In Figure~7 each phase is referenced to its own 0v surface; in the unified
+construction all terminations share the single \textit{o}-RuO$_2$(110) 0v
+reference, using the fact that \textit{s}-RuO$_2$(110) 0v is
+\textit{o}-RuO$_2$(110) with its six on-top oxygens removed
+(Ru$_{36}$O$_{78} \rightarrow$ Ru$_{36}$O$_{72}$, $n_{\mathrm{vac}}=6$).
+
+\subsection*{Operating oxygen chemical potentials}
+The ATR inlet is set by a fixed feed oxygen partial pressure
+(O$_2$/NH$_3 = 0.25 \rightarrow p_{\mathrm{O_2}} = 0.2$~bar):
+\begin{equation}
+  \Delta\mu_{\mathrm O}^{\,\mathrm{inlet}} =
+  \tfrac{1}{2}\left[G_{\mathrm{O_2}}(T) - G_{\mathrm{O_2}}(0\,\mathrm{K})\right]
+  + \tfrac{1}{2}k_{\mathrm B}T\ln\!\left(p_{\mathrm{O_2}}/p^{0}\right)
+  \label{eq:inlet}
+\end{equation}
+The downstream reforming potential is fixed by the
+H$_2 + \tfrac{1}{2}$O$_2 \rightleftharpoons$ H$_2$O equilibrium, and is
+independent of the O$_2$ reference:
+\begin{equation}
+  \Delta\mu_{\mathrm O}^{\,\mathrm{down}} =
+  \left[G_{\mathrm{H_2O}}(T) - G_{\mathrm{H_2}}(T)\right]
+  - \tfrac{1}{2}G_{\mathrm{O_2}}(0\,\mathrm{K})
+  + k_{\mathrm B}T\ln\!\left(p_{\mathrm{H_2O}}/p_{\mathrm{H_2}}\right)
+  \label{eq:down}
+\end{equation}
+evaluated at $p_{\mathrm{H_2O}}/p_{\mathrm{H_2}}=10$. The upper axis of Figure~7
+converts $\Delta\mu_{\mathrm O}$ into an equivalent O$_2$ partial pressure by
+inverting Eq.~\eqref{eq:dmuO}:
+\begin{equation}
+  \log_{10}\!\left(p_{\mathrm{O_2}}/p^{0}\right) =
+  \frac{\Delta\mu_{\mathrm O}
+  - \tfrac{1}{2}\left(G_{\mathrm{O_2}}(T) - G_{\mathrm{O_2}}(0\,\mathrm{K})\right)}
+       {\tfrac{1}{2}k_{\mathrm B}T\ln 10}
+  \label{eq:pO2}
+\end{equation}
+with $p^{0}=1$~bar the standard-state pressure.
