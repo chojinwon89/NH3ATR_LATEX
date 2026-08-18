@@ -136,11 +136,14 @@ construction, instead of through the bulk-equilibrium constraint
 $\mu_{\mathrm{Ru}}+2\mu_{\mathrm O}=g^{\mathrm{bulk}}_{\mathrm{RuO_2}}$ that references
 $\gamma$ to bulk RuO$_2$; both choices leave every crossover and vacancy-formation
 threshold unchanged.
-In Figure~7 each phase is referenced to its own 0v surface; in the unified
-construction all terminations share the single \textit{o}-RuO$_2$(110) 0v
-reference, using the fact that \textit{s}-RuO$_2$(110) 0v is
-\textit{o}-RuO$_2$(110) with its six on-top oxygens removed
-(Ru$_{36}$O$_{78} \rightarrow$ Ru$_{36}$O$_{72}$, $n_{\mathrm{vac}}=6$).
+This unified construction is shown in Figure~\ref{fig:unified}, in which all
+terminations share the single \textit{o}-RuO$_2$(110) 0v reference, using the fact
+that \textit{s}-RuO$_2$(110) 0v is \textit{o}-RuO$_2$(110) with its six on-top
+oxygens removed (Ru$_{36}$O$_{78} \rightarrow$ Ru$_{36}$O$_{72}$,
+$n_{\mathrm{vac}}=6$). The equivalent diagram referenced to bulk RuO$_2$ is shown
+in Figure~\ref{fig:bulkref}; presenting the two reference choices side by side
+demonstrates that the \textit{o}$\rightarrow$\textit{s} crossover and
+vacancy-formation thresholds are independent of the reference.
 
 \subsection*{Operating oxygen chemical potentials}
 The ATR inlet is set by a fixed feed oxygen partial pressure
@@ -161,8 +164,9 @@ independent of the O$_2$ reference:
   + k_{\mathrm B}T\ln\!\left(p_{\mathrm{H_2O}}/p_{\mathrm{H_2}}\right)
   \label{eq:down}
 \end{equation}
-evaluated at $p_{\mathrm{H_2O}}/p_{\mathrm{H_2}}=10$. The upper axis of Figure~7
-converts $\Delta\mu_{\mathrm O}$ into an equivalent O$_2$ partial pressure by
+evaluated at $p_{\mathrm{H_2O}}/p_{\mathrm{H_2}}=10$. The upper axes of
+Figures~\ref{fig:unified} and~\ref{fig:bulkref} convert $\Delta\mu_{\mathrm O}$
+into an equivalent O$_2$ partial pressure by
 inverting Eq.~\eqref{eq:dmuO}:
 \begin{equation}
   \log_{10}\!\left(p_{\mathrm{O_2}}/p^{0}\right) =
@@ -199,7 +203,8 @@ termination slopes downward with a slope equal to its excess-oxygen areal
 density, $-(N_{\mathrm O}-2N_{\mathrm{Ru}})/A$
 ($-50.1$~meV\,\AA$^{-2}$\,eV$^{-1}$ for the six on-top oxygens of
 \textit{o}-RuO$_2$(110) 0v). Every \textit{o}$\rightarrow$\textit{s} crossover is
-numerically identical to that of Figure~7, confirming that the surface phase
+numerically identical to that of the \textit{o}-RuO$_2$(110)-referenced diagram
+(Figure~\ref{fig:unified}), confirming that the surface phase
 boundaries are independent of the chosen reference.
 
 Superimposing the ATR operating potentials of
@@ -275,6 +280,30 @@ increases.
 
 \begin{figure*}[htbp]
   \centering
+  \includegraphics[width=\linewidth]{fig9_unified_states_2x2_dft.png}
+  \caption{Relative surface grand potential $\Delta\Omega_k/A$ of the
+  \textit{o}- and \textit{s}-RuO$_2$(110) terminations, all referenced to a single
+  \textit{o}-RuO$_2$(110) 0v surface, at (a)~298, (b)~600, (c)~900 and (d)~1200~K.
+  Solid lines, \textit{o}-RuO$_2$(110) $k$-vacancy surfaces (0--3v); dashed lines,
+  \textit{s}-RuO$_2$(110) surfaces, with \textit{s}-RuO$_2$(110) 0v being
+  \textit{o}-RuO$_2$(110) with its six on-top oxygens removed
+  (Ru$_{36}$O$_{78}\rightarrow$Ru$_{36}$O$_{72}$). The black dash-dotted line marks
+  the direct \textit{o}$\rightarrow$\textit{s} transition by removal of the six
+  on-top oxygens (0v$\leftrightarrow$0v); the grey dotted line marks the
+  convex-hull \textit{o}$\rightarrow$\textit{s} transition (\textit{o}-RuO$_2$ 3v
+  $\rightarrow$ \textit{s}-RuO$_2$ 0v). Red and green dashed verticals locate the
+  ATR inlet ($\mathrm{O_2/NH_3}=0.25$) and downstream reforming
+  ($\mathrm{H_2O/H_2}=10$) oxygen chemical potentials
+  (Eqs.~\eqref{eq:inlet}--\eqref{eq:down}). Shaded bands indicate the
+  \textit{s}-stable (left) and \textit{o}-stable (right) regions. The upper axis of
+  each panel gives the corresponding oxygen partial pressure,
+  $\log_{10}\!\left(p_{\mathrm{O_2}}/\mathrm{bar}\right)$ (Eq.~\eqref{eq:pO2}); all
+  panels share a common axis.}
+  \label{fig:unified}
+\end{figure*}
+
+\begin{figure*}[htbp]
+  \centering
   \includegraphics[width=\linewidth]{fig_bulk_referenced_2x2_dft.png}
   \caption{Surface grand potential of the \textit{o}- and
   \textit{s}-RuO$_2$(110) terminations referenced to bulk RuO$_2$ (absolute
@@ -282,7 +311,8 @@ increases.
   Solid lines, \textit{o}-RuO$_2$(110) $k$-vacancy surfaces; dashed lines,
   \textit{s}-RuO$_2$(110); the stoichiometric \textit{s}-RuO$_2$(110) 0v surface
   is flat. The dotted line marks the \textit{o}$\rightarrow$\textit{s} crossover,
-  which is identical to that of Figure~7. Shaded bands are thermodynamically
+  which is identical to that of Figure~\ref{fig:unified}. Shaded bands are
+  thermodynamically
   inaccessible: the oxygen-rich limit at $\Delta\mu_{\mathrm O}=0$ (O$_2$
   condensation) and the oxygen-poor limit at
   $\Delta\mu_{\mathrm O}=\tfrac{1}{2}\Delta H_f^{\,\mathrm{RuO_2}}\approx-1.60$~eV
