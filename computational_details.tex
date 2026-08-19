@@ -188,12 +188,16 @@ limit is fixed by decomposition of the oxide into metallic ruthenium,
 $\mathrm{RuO_2}\rightarrow\mathrm{Ru}+\mathrm{O_2}$, which occurs when
 \begin{equation}
   \Delta\mu_{\mathrm O}^{\,\mathrm{poor}} =
-  \tfrac{1}{2}\,\Delta H_f^{\,\mathrm{RuO_2}} \approx -1.60~\mathrm{eV},
+  \tfrac{1}{2}\,\Delta H_f^{\,\mathrm{RuO_2}} \approx -1.59~\mathrm{eV},
   \label{eq:opoor}
 \end{equation}
-using the experimental heat of formation $\Delta H_f^{\,\mathrm{RuO_2}}=-3.19$~eV
-[NIST--JANAF; consistent with the value adopted by Reuter and Scheffler,
-Phys.\ Rev.\ B \textbf{68}, 045407 (2003)]. Because $\Delta\mu_{\mathrm O}$
+using the formation enthalpy obtained directly from our DFT total energies,
+$\Delta H_f^{\,\mathrm{RuO_2}} = g^{\mathrm{bulk}}_{\mathrm{RuO_2}}
+- g^{\mathrm{metal}}_{\mathrm{Ru}} - G_{\mathrm{O_2}}(0\,\mathrm{K}) = -3.18$~eV,
+where the metallic reference $g^{\mathrm{metal}}_{\mathrm{Ru}}$ is the energy per
+Ru atom of the relaxed hcp primitive cell; this DFT value agrees with the
+experimental heat of formation ($-3.19$~eV) to within 15~meV. Because
+$\Delta\mu_{\mathrm O}$
 already carries the full temperature and pressure dependence of the O$_2$
 reservoir (Eq.~\eqref{eq:dmuO}), this decomposition bound is temperature
 independent. Figure~\ref{fig:bulkref} shows the resulting diagram at 298, 600,
@@ -242,7 +246,7 @@ selective, oxygen-rich \textit{o}-RuO$_2$ surface near the inlet to the reduced
 \textit{s}-RuO$_2$ surface as ammonia is consumed and the local gas becomes
 reducing. Increasing temperature compresses this window: at 1200~K the inlet
 potential ($-1.39$~eV), the \textit{o}$\rightarrow$\textit{s} crossover
-($-1.58$~eV) and the decomposition bound ($-1.60$~eV) nearly coincide, so the
+($-1.58$~eV) and the decomposition bound ($-1.59$~eV) nearly coincide, so the
 reduced surface---and eventually metallic Ru---becomes accessible even close to
 the inlet, consistent with the loss of N$_2$ selectivity observed at high
 temperature.
@@ -330,7 +334,7 @@ increases.
   thermodynamically
   inaccessible: the oxygen-rich limit at $\Delta\mu_{\mathrm O}=0$ (O$_2$
   condensation) and the oxygen-poor limit at
-  $\Delta\mu_{\mathrm O}=\tfrac{1}{2}\Delta H_f^{\,\mathrm{RuO_2}}\approx-1.60$~eV
+  $\Delta\mu_{\mathrm O}=\tfrac{1}{2}\Delta H_f^{\,\mathrm{RuO_2}}\approx-1.59$~eV
   (decomposition to metallic Ru, Eq.~\eqref{eq:opoor}). The upper axis of each
   panel gives the corresponding oxygen partial pressure,
   $\log_{10}\!\left(p_{\mathrm{O_2}}/\mathrm{bar}\right)$, at that temperature
